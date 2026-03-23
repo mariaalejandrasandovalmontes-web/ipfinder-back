@@ -1,10 +1,10 @@
 FROM php:8.2-cli
 
-# Instalar dependencias del sistema y extensiones de PHP
+# Instalar dependencias del sistema y extensiones de PHP necesarias
 RUN apt-get update && apt-get install -y \
     libonig-dev \
     libxml2-dev \
-    && docker-php-ext-install pdo pdo_mysql mbstring tokenizer xml
+    && docker-php-ext-install pdo_mysql mbstring xml
 
 # Instalar Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
