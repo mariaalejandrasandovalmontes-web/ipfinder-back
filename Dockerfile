@@ -2,9 +2,12 @@ FROM php:8.2-cli
 
 # Instalar dependencias del sistema y extensiones de PHP necesarias
 RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    libzip-dev \
     libonig-dev \
     libxml2-dev \
-    && docker-php-ext-install pdo_mysql mbstring xml
+    && docker-php-ext-install pdo_mysql mbstring xml zip
 
 # Instalar Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
