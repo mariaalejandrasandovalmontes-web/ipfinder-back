@@ -28,7 +28,7 @@ class FinderController extends BaseController
         $ip = $request->input('ip');
 
         $validator = Validator::make($request->all(), [
-            'ip' => 'required|ip' // regla de validación para IPv4 e IPv6
+            'ip' => 'required|ip'
         ]);
 
         if ($validator->fails()) {

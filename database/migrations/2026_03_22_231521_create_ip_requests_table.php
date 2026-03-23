@@ -19,7 +19,7 @@ return new class extends Migration
             $table->string('company_domain', 150)->nullable();
             $table->string('abuse_score', 50)->nullable();
             $table->decimal('lat', 10, 6)->nullable();
-            $table->decimal('long', 10, 6)->nullable();
+            $table->decimal('lon', 10, 6)->nullable();
             $table->string('country', 100)->nullable();
             $table->string('zipcode', 20)->nullable();
             $table->timestamps(); // crea created_at y updated_at

@@ -15,7 +15,7 @@ class IpRequest extends Model
         'company_domain',
         'abuse_score',
         'lat',
-        'long',
+        'lon',
         'country',
         'zipcode',
         'type'

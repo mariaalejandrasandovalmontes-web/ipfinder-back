@@ -10,15 +10,25 @@ class CorsMiddleware
     {
         $response = $next($request);
 
-        // Permitir solo tu frontend
-        $response->headers->set('Access-Control-Allow-Origin', 'http://localhost:5173');
+        $allowedOrigins = [
+            'http://localhost:5173',
+            'https://ipfinder-front.vercel.app',
+        ];
+
+
+        $origin = $request->headers->get('Origin');
+
+        if (in_array($origin, $allowedOrigins))
+        {
+            $response->headers->set('Access-Control-Allow-Origin', $origin);
+        }
+
         $response->headers->set('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
         $response->headers->set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
 
-        // Manejo de preflight (OPTIONS)
         if ($request->getMethod() === "OPTIONS") {
             return response('', 200)
-                ->header('Access-Control-Allow-Origin', 'http://localhost:5173')
+                ->header('Access-Control-Allow-Origin', $origin)
                 ->header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS')
                 ->header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
         }

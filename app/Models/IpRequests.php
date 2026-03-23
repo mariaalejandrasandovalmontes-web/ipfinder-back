@@ -34,7 +34,7 @@ class IpRequests
                 'company_domain' => $data['company']['domain'] ?? null,
                 'abuse_score' => $data['company']['abuser_score'] ?? null,
                 'lat' => $data['location']['latitude'] ?? null,
-                'long' => $data['location']['longitude'] ?? null,
+                'lon' => $data['location']['longitude'] ?? null,
                 'country' => $data['location']['country'] ?? null,
                 'zipcode' => $data['location']['zip'] ?? null,
                 'type' => $this->getIpType($ip) ?? null,
