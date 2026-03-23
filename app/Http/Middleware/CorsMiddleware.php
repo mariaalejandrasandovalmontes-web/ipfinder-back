@@ -13,7 +13,7 @@ class CorsMiddleware
         $allowedOrigins = [
             'http://localhost:5173',
             'https://ipfinder-front.vercel.app',
-            'https://ipfinder-git-94da80-mariaalejandrasandovalmontes-2589s-projects.vercel.app/'
+            'https://ipfinder-git-94da80-mariaalejandrasandovalmontes-2589s-projects.vercel.app'
         ];
 
 
